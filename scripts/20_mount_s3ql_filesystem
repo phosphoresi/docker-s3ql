@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+if [ ! -f /root/s3ql.ini ];then
+	echo "no s3ql config file found!"
+	exit 3
+fi
+
+
+mkdir -p ${S3QL_MOUNTPOINT}
+mount.s3ql --backend-options tcp-timeout=${TIMEOUT} --allow-other --cachesize ${CACHESIZE} --authfile /root/s3ql.ini ${storage_url} ${S3QL_MOUNTPOINT}
+
+if [ $? -ne 0 ];then
+	exit 4
+fi

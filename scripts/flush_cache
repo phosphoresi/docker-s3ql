@@ -1,0 +1,10 @@
+#!/bin/bash
+
+s3qlctrl flushcache $S3QL_MOUNTPOINT
+
+if [ $? -ne 0 ];then
+	echo "Flushing s3ql cache failed"
+	exit 5
+else
+	echo "s3ql cache successfully flushed"
+fi

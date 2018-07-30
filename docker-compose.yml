@@ -1,0 +1,126 @@
+version: '2'
+services:
+  s3qltest:
+    privileged: true
+    image: docker-gitlab.sudokeys.com/infra/nakivo:s3ql
+    environment:
+      fs_passphrase: PASSWORD
+      storage_url: swiftks://auth.cloud.ovh.net/SBG3:tests3ql
+    stdin_open: true
+    tty: true
+    ports:
+    - 9446:9446/tcp
+    - 9500:9500/tcp
+    - 9501:9501/tcp
+    - 9502:9502/tcp
+    - 9503:9503/tcp
+    - 9504:9504/tcp
+    - 9505:9505/tcp
+    - 9506:9506/tcp
+    - 9507:9507/tcp
+    - 9508:9508/tcp
+    - 9509:9509/tcp
+    - 9510:9510/tcp
+    - 9511:9511/tcp
+    - 9512:9512/tcp
+    - 9513:9513/tcp
+    - 9514:9514/tcp
+    - 9515:9515/tcp
+    - 9516:9516/tcp
+    - 9517:9517/tcp
+    - 9518:9518/tcp
+    - 9519:9519/tcp
+    - 9520:9520/tcp
+    - 9521:9521/tcp
+    - 9522:9522/tcp
+    - 9523:9523/tcp
+    - 9524:9524/tcp
+    - 9525:9525/tcp
+    - 9526:9526/tcp
+    - 9527:9527/tcp
+    - 9528:9528/tcp
+    - 9529:9529/tcp
+    - 9530:9530/tcp
+    - 9531:9531/tcp
+    - 9532:9532/tcp
+    - 9533:9533/tcp
+    - 9534:9534/tcp
+    - 9535:9535/tcp
+    - 9536:9536/tcp
+    - 9537:9537/tcp
+    - 9538:9538/tcp
+    - 9539:9539/tcp
+    - 9540:9540/tcp
+    - 9541:9541/tcp
+    - 9542:9542/tcp
+    - 9543:9543/tcp
+    - 9544:9544/tcp
+    - 9545:9545/tcp
+    - 9546:9546/tcp
+    - 9547:9547/tcp
+    - 9548:9548/tcp
+    - 9549:9549/tcp
+    - 9550:9550/tcp
+    - 9551:9551/tcp
+    - 9552:9552/tcp
+    - 9553:9553/tcp
+    - 9554:9554/tcp
+    - 9555:9555/tcp
+    - 9556:9556/tcp
+    - 9557:9557/tcp
+    - 9558:9558/tcp
+    - 9559:9559/tcp
+    - 9560:9560/tcp
+    - 9561:9561/tcp
+    - 9562:9562/tcp
+    - 9563:9563/tcp
+    - 9564:9564/tcp
+    - 9565:9565/tcp
+    - 9566:9566/tcp
+    - 9567:9567/tcp
+    - 9568:9568/tcp
+    - 9569:9569/tcp
+    - 9570:9570/tcp
+    - 9571:9571/tcp
+    - 9572:9572/tcp
+    - 9573:9573/tcp
+    - 9574:9574/tcp
+    - 9575:9575/tcp
+    - 9576:9576/tcp
+    - 9577:9577/tcp
+    - 9578:9578/tcp
+    - 9579:9579/tcp
+    - 9580:9580/tcp
+    - 9581:9581/tcp
+    - 9582:9582/tcp
+    - 9583:9583/tcp
+    - 9584:9584/tcp
+    - 9585:9585/tcp
+    - 9586:9586/tcp
+    - 9587:9587/tcp
+    - 9588:9588/tcp
+    - 9589:9589/tcp
+    - 9590:9590/tcp
+    - 9591:9591/tcp
+    - 9592:9592/tcp
+    - 9593:9593/tcp
+    - 9594:9594/tcp
+    - 9595:9595/tcp
+    - 9596:9596/tcp
+    - 9597:9597/tcp
+    - 9598:9598/tcp
+    - 9599:9599/tcp
+    - 9600:9600/tcp
+    stop_grace_period: 90
+    secrets:
+    - mode: '0400'
+      uid: '0'
+      gid: '0'
+      source: s3ql-test01
+      target: swift_auth
+    labels:
+      io.rancher.container.pull_image: always
+secrets:
+  s3ql-test01:
+    external: 'true'
+

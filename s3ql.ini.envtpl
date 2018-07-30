@@ -1,0 +1,6 @@
+[swift]
+backend-login: {{ backend_login }}
+backend-password: {{ backend_password }}
+storage-url: {{ storage_url }}
+fs-passphrase: {{ fs_passphrase }}
+

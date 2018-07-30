@@ -1,0 +1,28 @@
+#!/bin/bash
+
+
+if [ -z "$storage_url" ] || [ -z "$fs_passphrase" ];then
+	echo "storage_url or fs_passphrase not defined"
+	exit 2
+fi
+
+
+if [ -z "$backend_login" ] || [ -z "$backend_password" ];then
+        echo "swift backend login or password undefined"
+        exit 2
+fi
+
+
+
+
+if [ ! -f /root/s3ql.ini ];then
+	echo "creating s3ql.ini from template"
+	envtpl /root/s3ql.ini.envtpl --output-file /root/s3ql.ini
+	chmod 400 /root/s3ql.ini
+else
+	echo "s3ql.ini found"
+fi
+
+echo $fs_passphrase | mkfs.s3ql --authfile /root/s3ql.ini $storage_url
+
+
