@@ -25,7 +25,7 @@ The filesystem will be created if necessary but it won't be formatted if corrupt
 
 A docker-compose.yml file can be found in the repo if you need more examples.
 ## Example docker run command
-docker run -d --privileged --name s3qltest --stop-timeout 900 --restart=unless-stopped -e CACHESIZE=20971520 -e TIMEOUT=36000 \
+ docker run -d --privileged --name s3qltest --stop-timeout 900 --restart=unless-stopped -e CACHESIZE=20971520 -e TIMEOUT=36000 \
            -e "backend_login=TENANT_NAME:USERNAME" -e "backend_password=HIDDEN" \
            -e "storage_url=swiftks://auth.cloud.ovh.net/GRA3:blueminds3ql" -e "fs_passphrase=SECRET" \
            -v /srv/caches3ql:/root/.s3ql -v /mnt/s3ql:/mnt/s3ql docker-gitlab.sudokeys.com/phosphore/s3ql
