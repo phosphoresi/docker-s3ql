@@ -1,6 +1,6 @@
-# Nakivo with S3QL
+# S3QL
 
-This container contain a nakivo transporter and the backend s3ql.<br>
+This container allow you to mount the backend s3ql.<br>
 It has only been tested to backup on swift for now.
 
 
@@ -8,8 +8,8 @@ It has only been tested to backup on swift for now.
 
 For the container to mount the s3ql filesystem you need to configure at least :
  
-* A rancher secret mounted with the name "swift_auth" containing :
-  * ```backend-login=TENANT_NAME:USERNAME```
+* The credential to login to the swift backend :
+  * ```backend_login=TENANT_NAME:USERNAME```
   * ```backend_password=PASSWORD```
   
   On OVH you can find those informations by downloading your openrc file in horizon.
@@ -31,7 +31,6 @@ Variable | Decription | Default Value
 ------------ | ------------- | ------------
 CACHESIZE | Size of the cache in KB  | 10485760 (10GB)
 S3QL_MOUNTPOINT | Mountpoint of the filesystem  | /mnt/s3ql
-NAKIVO_PORT  | Nakivo port for communication with the director  | 9446
 
 
 ## TroubleShooting
