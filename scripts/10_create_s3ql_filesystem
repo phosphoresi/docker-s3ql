@@ -7,10 +7,6 @@ if [ -z "$storage_url" ] || [ -z "$fs_passphrase" ];then
 fi
 
 
-if [ -z "$backend_login" ] || [ -z "$backend_password" ];then
-        echo "swift backend login or password undefined"
-        exit 2
-fi
 
 
 
